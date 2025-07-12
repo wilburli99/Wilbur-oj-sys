@@ -1,0 +1,21 @@
+/logs/
+/.idea/
+/user-code/
+/user-code-pool/
+/deploy/test/nginx/dist/
+
+# Project exclude paths
+/oj-api/target/
+/oj-common/oj-common-core/target/
+/oj-common/oj-common-file/target/
+/oj-common/oj-common-message/target/
+/oj-common/oj-common-mybatis/target/
+/oj-common/oj-common-rabbitmq/target/
+/oj-common/oj-common-redis/target/
+/oj-common/oj-common-security/target/
+/oj-common/oj-common-swagger/target/
+/oj-gateway/target/
+/oj-modules/oj-friend/target/
+/oj-modules/oj-job/target/
+/oj-modules/oj-judge/target/
+/oj-modules/oj-system/target/
