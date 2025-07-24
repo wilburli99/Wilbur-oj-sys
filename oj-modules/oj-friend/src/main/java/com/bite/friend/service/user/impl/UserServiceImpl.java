@@ -61,7 +61,7 @@ public class UserServiceImpl implements IUserService {
     private Integer sendLimit;
 
     @Value("${sms.is-send:false}")
-    private boolean isSend;  //开关打开：true  开关关闭false
+    private boolean isSend;  //开关打开：true  开关关闭false：默认验证码123456
 
     @Value("${jwt.secret}")
     private String secret;
