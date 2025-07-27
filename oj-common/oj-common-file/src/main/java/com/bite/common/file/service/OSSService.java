@@ -4,7 +4,7 @@ import cn.hutool.core.exceptions.ExceptionUtil;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.lang.ObjectId;
 import cn.hutool.core.util.StrUtil;
-import com.aliyun.oss.OSSClient;
+import com.aliyun.oss.OSS;
 import com.aliyun.oss.model.CannedAccessControlList;
 import com.aliyun.oss.model.ObjectMetadata;
 import com.aliyun.oss.model.PutObjectRequest;
@@ -38,7 +38,7 @@ public class OSSService {
     private OSSProperties prop;
 
     @Autowired
-    private OSSClient ossClient;
+    private OSS ossClient;
 
     @Autowired
     private RedisService redisService;
