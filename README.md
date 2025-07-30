@@ -1,21 +1,8 @@
-# BITE-OJ 在线判题系统
-
-<div align="center">
-  <img src="img.png" alt="BITE-OJ Logo" width="200"/>
-  
-  一个基于微服务架构的在线判题系统
-  
-  ![Java](https://img.shields.io/badge/Java-17-orange)
-  ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.0.1-brightgreen)
-  ![Spring Cloud](https://img.shields.io/badge/Spring%20Cloud-2022.0.0-blue)
-  ![MySQL](https://img.shields.io/badge/MySQL-5.7-blue)
-  ![Redis](https://img.shields.io/badge/Redis-latest-red)
-  ![Docker](https://img.shields.io/badge/Docker-Supported-blue)
-</div>
+# Wilbur-OJ 在线判题系统
 
 ## 📖 项目简介
 
-BITE-OJ 是一个功能完整的在线判题系统，采用 Spring Boot 3.x + Spring Cloud 微服务架构设计。系统支持多语言编程题目的在线判题，提供完整的竞赛管理、用户管理、题目管理等功能，适用于编程教学、算法竞赛等场景。
+Wilbur-OJ 是一个功能完整的在线判题系统，采用 Spring Boot 3.x + Spring Cloud 微服务架构设计。系统支持多语言编程题目的在线判题，提供完整的竞赛管理、用户管理、题目管理等功能，适用于编程教学、算法竞赛等场景。
 
 ## 🏗️ 系统架构
 
@@ -43,7 +30,7 @@ BITE-OJ 是一个功能完整的在线判题系统，采用 Spring Boot 3.x + Sp
          │           │           │
    ┌─────▼────┐ ┌───▼───┐ ┌─────▼────┐
    │ System   │ │Friend │ │  Judge   │
-   │ 系统管理  │ │社交模块│ │ 判题服务  │
+   │ 系统管理  │ │用户模块│ │ 判题服务  │
    └─────┬────┘ └───┬───┘ └─────┬────┘
          │          │           │
          └──────────┼───────────┘
@@ -103,7 +90,7 @@ bite-oj-master/
 ├── oj-gateway/                 # 微服务网关
 ├── oj-modules/                 # 业务模块
 │   ├── oj-system/              # 系统管理模块
-│   ├── oj-friend/              # 社交功能模块
+│   ├── oj-friend/              # 用户功能模块
 │   ├── oj-judge/               # 判题服务模块
 │   └── oj-job/                 # 定时任务模块
 └── deploy/                     # 部署配置
@@ -119,7 +106,7 @@ bite-oj-master/
 - **题目管理**: 题目的增删改查、难度分级、用例管理
 - **竞赛管理**: 竞赛创建、编辑、发布、参赛管理
 
-### 2. 社交功能模块 (oj-friend)
+### 2. 用户功能模块 (oj-friend)
 - **消息系统**: 站内信、点对点通信、群发消息
 - **用户交互**: 好友系统、排行榜、讨论区
 - **竞赛报名**: 用户竞赛报名、成绩查询
@@ -219,26 +206,15 @@ docker-compose up -d
 | **Job** | 9203 | 定时任务服务 |
 | **Nginx** | 80/10030 | Web服务器 |
 
-### 前端访问
-- **用户端**: http://localhost (端口80)
-- **管理端**: http://localhost:10030
 
 ## 🔧 配置说明
-
 ### Nacos配置中心
 系统使用Nacos作为配置中心，主要配置包括：
 - 数据库连接配置
 - Redis连接配置
 - RabbitMQ连接配置
 - Elasticsearch连接配置
-- **JWT密钥配置（必需）**
-
-### 必需的JWT配置
-```yaml
-jwt:
-  secret: bite-oj-jwt-secret-key-2023  # 必须配置
-  expiration: 86400                    # token过期时间(秒)
-```
+- JWT密钥配置（必需）
 
 ### Docker沙箱配置
 ```yaml
@@ -253,21 +229,6 @@ sandbox:
     cpu: 1                 # CPU核心数限制
     time: 5                # 执行时间限制(秒)
 ```
-
-## ❓ 常见问题
-
-### 编译问题
-- **Lombok枚举问题**: 如遇到枚举构造器相关编译错误，检查Lombok版本兼容性
-- **JAX-RS冲突**: 项目已解决Spring Boot 3.x的Jakarta命名空间兼容问题
-
-### Docker连接问题
-- **Mac用户**: 推荐使用`unix:///var/run/docker.sock`
-- **Windows用户**: 需要启用Docker Desktop的TCP端口2375
-- **连接被拒绝**: 检查Docker Desktop是否正常运行
-
-### 配置问题
-- **JWT配置缺失**: 必须在Nacos中配置`jwt.secret`
-- **数据库连接**: 确保MySQL服务正常启动并可访问
 
 ## 🎯 系统特点
 
@@ -285,25 +246,6 @@ sandbox:
 - **连接池**: 数据库连接池优化，减少连接开销
 - **索引优化**: Elasticsearch全文搜索，快速定位题目
 - **容器池**: Docker容器池复用，减少容器创建开销
-
-## 🤝 贡献指南
-
-1. Fork 项目
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 开启 Pull Request
-
-## 📄 许可证
-
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
-
-## 📞 联系方式
-
-如有问题或建议，请通过以下方式联系：
-
-- 项目Issues: [GitHub Issues](https://github.com/your-repo/issues)
-- 邮箱: your-email@example.com
 
 ---
 
