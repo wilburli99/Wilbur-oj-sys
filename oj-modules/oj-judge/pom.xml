@@ -31,6 +31,13 @@
             <artifactId>docker-java</artifactId>
             <version>3.3.4</version>
         </dependency>
+        <!-- Mac M1 (ARM64) Netty本地库支持 -->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport-native-kqueue</artifactId>
+            <version>4.1.86.Final</version>
+            <classifier>osx-aarch_64</classifier>
+        </dependency>
         <dependency>
             <groupId>com.bite</groupId>
             <artifactId>oj-common-rabbitmq</artifactId>

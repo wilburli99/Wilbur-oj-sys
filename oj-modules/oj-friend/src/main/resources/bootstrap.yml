@@ -10,7 +10,7 @@ spring:
         namespace: de7b2e43-4aff-4ced-8487-4a3d75ba1778
         server-addr: http://localhost:8848
       config:
-        prefix: oj-system
+        prefix: oj-friend
         namespace: de7b2e43-4aff-4ced-8487-4a3d75ba1778
         server-addr: http://localhost:8848
         file-extension: yaml
