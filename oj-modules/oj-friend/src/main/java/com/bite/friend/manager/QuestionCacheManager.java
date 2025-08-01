@@ -43,6 +43,14 @@ public class QuestionCacheManager {
     public Long preQuestion(Long questionId) {
 //        List<Long> list = redisService.getCacheListByRange(CacheConstants.QUESTION_LIST, 0, -1, Long.class);
         Long index = redisService.indexOfForList(CacheConstants.QUESTION_LIST, questionId);
+        if (index == null) {
+            // 如果找不到题目ID，刷新缓存后重试
+            refreshCache();
+            index = redisService.indexOfForList(CacheConstants.QUESTION_LIST, questionId);
+            if (index == null) {
+                throw new ServiceException(ResultCode.FAILED);
+            }
+        }
         if (index == 0) {
             throw new ServiceException(ResultCode.FAILED_FIRST_QUESTION);
         }
@@ -51,6 +59,14 @@ public class QuestionCacheManager {
 
     public Object nextQuestion(Long questionId) {
         Long index = redisService.indexOfForList(CacheConstants.QUESTION_LIST, questionId);
+        if (index == null) {
+            // 如果找不到题目ID，刷新缓存后重试
+            refreshCache();
+            index = redisService.indexOfForList(CacheConstants.QUESTION_LIST, questionId);
+            if (index == null) {
+                throw new ServiceException(ResultCode.FAILED);
+            }
+        }
         long lastIndex = getListSize() - 1;
         if (index == lastIndex) {
             throw new ServiceException(ResultCode.FAILED_LAST_QUESTION);

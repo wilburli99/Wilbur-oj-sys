@@ -82,7 +82,8 @@ public class SandboxPoolServiceImpl implements ISandboxPoolService {
                     .awaitCompletion();
             if (CodeRunStatus.FAILED.equals(resultCallback.getCodeRunStatus())) {
                 compileResult.setCompiled(false);
-                compileResult.setExeMessage(resultCallback.getErrorMessage());
+                String errorMessage = resultCallback.getErrorMessage();
+                compileResult.setExeMessage(errorMessage != null ? errorMessage : "编译失败，无错误信息");
             } else {
                 compileResult.setCompiled(true);
             }
@@ -126,7 +127,8 @@ public class SandboxPoolServiceImpl implements ISandboxPoolService {
             if (memory != null) {
                 maxMemory = Math.max(maxMemory, statisticsCallback.getMaxMemory()); //记录最大的执行用例占用内存
             }
-            outList.add(resultCallback.getMessage().trim());   //记录正确的输出结果
+            String message = resultCallback.getMessage();
+            outList.add(message != null ? message.trim() : "");   //记录正确的输出结果
         }
         sandBoxPool.returnContainer(containerId);
         deleteUserCodeFile(); //清理文件

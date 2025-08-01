@@ -35,6 +35,9 @@ public class DockerStartResultCallback extends ExecStartResultCallback {
             String msgTmp = new String(frame.getPayload());
             if (StrUtil.isNotEmpty(msgTmp)) {
                 message = new String(frame.getPayload());
+            } else {
+                // 如果标准输出为空，设置为空字符串而不是null
+                message = "";
             }
             codeRunStatus = CodeRunStatus.SUCCEED;
         }
