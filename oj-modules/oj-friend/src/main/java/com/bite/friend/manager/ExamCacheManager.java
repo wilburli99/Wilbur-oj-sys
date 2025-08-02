@@ -180,6 +180,9 @@ public class ExamCacheManager {
         if (CollectionUtil.isEmpty(examRankVOList)) {
             return;
         }
+        // 先删除旧的缓存数据，避免重复
+        redisService.deleteObject(getExamRankListKey(examId));
+        // 再添加新的缓存数据
         redisService.rightPushAll(getExamRankListKey(examId), examRankVOList);
     }
 

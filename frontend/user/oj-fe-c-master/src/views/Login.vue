@@ -7,7 +7,7 @@
       <div class="logo-box">
         <img src="@/assets/logo.png">
         <div>
-          <div class="sys-name">比特OJ</div>
+          <div class="sys-name">Wilbur-OJ</div>
           <div class="sys-sub-name">帮助100万大学生就业</div>
         </div>
       </div>
