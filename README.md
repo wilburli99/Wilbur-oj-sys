@@ -1,8 +1,8 @@
-# Wilbur-OJ 在线判题系统
+# Programming Contest System - 编程竞赛系统
 
 ## 📖 项目简介
 
-Wilbur-OJ 是一个功能完整的在线判题系统，采用 Spring Boot 3.x + Spring Cloud 微服务架构设计。系统支持多语言编程题目的在线判题，提供完整的竞赛管理、用户管理、题目管理等功能，适用于编程教学、算法竞赛等场景。
+Programming Contest System 是一个功能完整的在线编程竞赛系统，采用 Spring Boot 3.x + Spring Cloud 微服务架构设计。系统支持多语言编程题目的在线判题，提供完整的竞赛管理、用户管理、题目管理等功能，适用于编程教学、算法竞赛等场景。
 
 ## 🏗️ 系统架构
 
@@ -387,3 +387,7 @@ npm run dev
 ---
 
 ⭐ 如果这个项目对您有帮助，请给个星标支持一下！
+
+---
+
+**Programming Contest System** - 专业的在线编程竞赛系统，为编程教学和算法竞赛提供完整的解决方案。

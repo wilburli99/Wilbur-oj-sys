@@ -1,8 +1,8 @@
-# Wilbur-OJ 前端项目
+# Programming Contest System 前端项目
 
 ## 📖 项目简介
 
-本项目包含Wilbur-OJ在线判题系统的两个前端项目：
+本项目包含Programming Contest System编程竞赛系统的两个前端项目：
 - **B端管理前端**：管理员界面，用于系统管理、题目管理、竞赛管理等
 - **C端用户前端**：用户界面，用于题目练习、竞赛参与、个人中心等
 
@@ -313,4 +313,8 @@ npm run type-check
 3. **Console面板**：查看错误信息和调试日志
 4. **Sources面板**：断点调试JavaScript代码
 
-⭐ 如果这个项目对您有帮助，请给个星标支持一下！ 
+⭐ 如果这个项目对您有帮助，请给个星标支持一下！
+
+---
+
+**Programming Contest System** - 专业的在线编程竞赛系统前端项目，提供现代化的用户界面和管理界面。 
